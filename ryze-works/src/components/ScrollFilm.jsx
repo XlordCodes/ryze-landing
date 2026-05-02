@@ -118,7 +118,7 @@ const ScrollFilm = ({ images = [], onComplete }) => {
   // ══════════════════════════════════════════════════════════════════════
   // MOBILE — RAF lerp + momentum logic
   // ══════════════════════════════════════════════════════════════════════
-  const tick = useCallback(() => {
+  const tick = useCallback(function tickFn() {
     if (!completedRef.current) {
       // Decay touch momentum after finger lifts
       if (Math.abs(touchVelocity.current) > 0.1) {
@@ -142,7 +142,7 @@ const ScrollFilm = ({ images = [], onComplete }) => {
         }
       }
     }
-    rafId.current = requestAnimationFrame(tick);
+    rafId.current = requestAnimationFrame(tickFn);
   }, [totalFrames, drawAt, triggerComplete]);
 
   const onTouchStart = useCallback((e) => {
@@ -180,7 +180,7 @@ const ScrollFilm = ({ images = [], onComplete }) => {
 
     if (mobile.current) {
       // Mobile: smooth RAF loop + touch events
-      rafId.current = requestAnimationFrame(tick);
+    rafId.current = requestAnimationFrame(tick);
       window.addEventListener('touchstart', onTouchStart, { passive: false });
       window.addEventListener('touchmove',  onTouchMove,  { passive: false });
       window.addEventListener('touchend',   onTouchEnd);
@@ -206,7 +206,7 @@ const ScrollFilm = ({ images = [], onComplete }) => {
     if (!images.length) return;
     let count = 0;
     imagesRef.current = new Array(images.length);
-    setLoaded(false);
+
 
     images.forEach((src, i) => {
       const img = new window.Image();

@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState, useCallback } from 'react';
+import { useState, useCallback } from 'react';
 import '../styles/CaseStudies.css';
 import Footer from '../components/Footer';
 import useInView from '../hooks/useInView';
@@ -126,7 +126,7 @@ export default function CaseStudies({ onBack, onNavigate, onStudySelect }) {
   const [activeFilter, setActiveFilter] = useState('All');
   const [heroRef, heroVisible] = useInView(0.1);
   const [filterRef, filterVisible] = useInView(0.1);
-  const [statsRef, statsVisible] = useInView(0.1);
+
 
   const handleFilterClick = useCallback((e) => {
     const filter = e.currentTarget.dataset.filter;

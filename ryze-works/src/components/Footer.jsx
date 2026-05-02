@@ -54,7 +54,7 @@ const NAV = {
 export default function Footer({ onNavigate }) {
   const year = new Date().getFullYear();
 
-  const handleLinkClick = (e, label, href) => {
+  const handleLinkClick = (e, label) => {
     if (label === 'Careers' && onNavigate) {
       e.preventDefault();
       onNavigate('careers');
@@ -135,7 +135,7 @@ export default function Footer({ onNavigate }) {
             <ul className="footer-nav">
               {links.map(({ label, href, badge }) => (
                 <li key={label}>
-                  <a href={href} onClick={(e) => handleLinkClick(e, label, href)}>
+                  <a href={href} onClick={(e) => handleLinkClick(e, label)}>
                     {label}
                     {badge && <span className="footer-nav-badge">{badge}</span>}
                   </a>

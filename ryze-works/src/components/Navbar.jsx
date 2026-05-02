@@ -88,7 +88,7 @@ export default function Navbar() {
 
         {/* Desktop Actions */}
         <div className="lp-nav-actions">
-          <a href="#" className="btn-ghost">Sign in</a>
+          <a href="https://attendance.ryzeworks.tech/login" className="btn-ghost" target="_blank" rel="noopener noreferrer">Sign in</a>
           <a href="#" className="btn-nav-cta">Get started</a>
         </div>
 
@@ -146,9 +146,9 @@ export default function Navbar() {
           {/* Mobile Footer Buttons */}
           <div className="fm-footer">
             <div className="fm-footer-btns">
-              <a href="#" className="fm-btn fm-btn-ghost" onClick={closeMenu}>
-                Sign in
-              </a>
+                <a href="https://attendance.ryzeworks.tech/login" className="fm-btn fm-btn-ghost" onClick={closeMenu} target="_blank" rel="noopener noreferrer">
+                  Sign in
+                </a>
               <a href="#" className="fm-btn fm-btn-cta" onClick={closeMenu}>
                 Get started
               </a>

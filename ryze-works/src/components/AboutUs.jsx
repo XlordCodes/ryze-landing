@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState, useCallback } from 'react';
+
 import '../styles/AboutUs.css';
 import useInView from '../hooks/useInView';
 import Footer from '../components/Footer.jsx';

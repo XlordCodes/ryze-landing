@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef, useCallback } from "react";
+import { useState, useEffect, useCallback } from "react";
 import "../styles/ProjectGallery.css";
 
 export default function ProjectGallery({ project, onBack }) {
@@ -52,8 +52,8 @@ export default function ProjectGallery({ project, onBack }) {
   useEffect(() => {
     if (!project.gallery.length) return;
 
-    const empty = Array.from({ length: colCount }, () => []);
-    const colHeights = new Array(colCount).fill(0);
+
+
     let loaded = 0;
 
     // We collect { src, index, ratio } for every image then distribute

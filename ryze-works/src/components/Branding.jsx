@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState, useCallback } from 'react';
+import { useCallback } from 'react';
 import '../styles/Branding.css';
 import Footer from '../components/Footer';
 import useInView from '../hooks/useInView';

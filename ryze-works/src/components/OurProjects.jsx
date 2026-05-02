@@ -4,7 +4,7 @@ import cover from '../coverImages/cover2.png';
 import THM from '../coverImages/THM.png';
 import SGA from '../coverImages/SGA.png'
 
-export const projects = [
+const projects = [
   {
     id: "vercel",
     name: "NOSTIC",
