@@ -1,5 +1,5 @@
 import { useState, useCallback } from "react";
-import { motion as Motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { services } from "../data/services";
 import "../styles/OurServices.css";
 
@@ -22,7 +22,7 @@ const VisualPanel = ({ feature, index }) => {
 
   return (
     <AnimatePresence mode="wait">
-      <Motion.div
+      <motion.div
         key={feature.id}
         className="visual-panel"
         initial={{ opacity: 0 }}
@@ -33,16 +33,16 @@ const VisualPanel = ({ feature, index }) => {
         <img src={img} alt={feature.title} className="visual-bg-image" />
         <div className="visual-image-gradient" />
         <div className="visual-content">
-          <Motion.div
+          <motion.div
             className="visual-service-number"
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94], delay: 0.1 }}
           >
             {String(index + 1).padStart(2, "0")}
-          </Motion.div>
+          </motion.div>
 
-          <Motion.div
+          <motion.div
             className="visual-service-testimonial"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -50,9 +50,9 @@ const VisualPanel = ({ feature, index }) => {
           >
             <p className="visual-test-quote">"{feature.testimonial.quote}"</p>
             <span className="visual-test-client">— {feature.testimonial.client}</span>
-          </Motion.div>
+          </motion.div>
         </div>
-      </Motion.div>
+      </motion.div>
     </AnimatePresence>
   );
 };
@@ -73,7 +73,7 @@ export default function OurProjects() {
 
   return (
     <div className="explorer-backdrop">
-      
+
       <div className="services-heading">
         <span className="services-our">Our</span>{" "}
         <span className="services-text">Services</span>
@@ -109,7 +109,7 @@ export default function OurProjects() {
                 return (
                   <li key={service.id}>
                     {isActive ? (
-                      <Motion.div
+                      <motion.div
                         className="feature-card expanded"
                         initial={{ opacity: 0, y: -10, scale: 0.96 }}
                         animate={{ opacity: 1, y: 0, scale: 1 }}
@@ -148,7 +148,7 @@ export default function OurProjects() {
                             </motion.span>
                           ))}
                         </div>
-                      </Motion.div>
+                      </motion.div>
                     ) : (
                       <button
                         className="feature-pill"
